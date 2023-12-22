@@ -12,11 +12,11 @@ const Home = () => {
 
     return <>
 
-        <View style={{ gap: 5, overflow: "hidden", borderColor: "brown", borderWidth: 2, padding: 5, backgroundColor: "aqua", borderRadius: 10, flexDirection: "row", justifyContent: "space-between" }} >
+        <View style={{ gap: 5, overflow: "hidden", borderColor: "brown", borderWidth: 3, padding: 5, backgroundColor: "aqua", borderRadius: 10, flexDirection: "row", justifyContent: "space-between" }} >
 
 
-            <Button onPress={e => setToggle("map")} style={{ ...styles.map, backgroundColor: toggle === "map" ? "rgba(255,0,0,0.98)" : "white" }}  ><Text style={{}} >Map</Text></Button>
-            <Button onPress={e => setToggle("camera")} style={{ ...styles.camera, backgroundColor: toggle !== "map" ? "rgba(255,0,0,0.98)" : "white" }}  ><Text style={{}} >Camaera</Text></Button>
+            <Button onPress={e => setToggle("map")} style={{ ...styles.map, backgroundColor: toggle === "map" ? "black" : "white" }}  ><Text style={{ color: toggle === "map" ? "white" : "black" }} >Map</Text></Button>
+            <Button onPress={e => setToggle("camera")} style={{ ...styles.camera, backgroundColor: toggle !== "map" ? "black" : "white" }}  ><Text style={{ color: toggle !== "map" ? "white" : "black" }} >Camaera</Text></Button>
 
 
         </View>
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     camera: {
-
         display: "flex", flexDirection: "row", alignItems: "center", backgroundColor: "whitesmoke", borderRadius: 5, width: "50%", justifyContent: "center"
     }
 

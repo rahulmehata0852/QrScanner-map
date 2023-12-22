@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { Button, StyleSheet, View, Text } from 'react-native';
 import * as Location from "expo-location"
+import { ActivityIndicator } from 'react-native-paper';
 
 export default function Map() {
 
@@ -31,7 +32,12 @@ export default function Map() {
         userLocation()
     }, [])
 
-    if (mapRegion === null) return <Text>Loading ...</Text>
+    if (mapRegion === null) return <View style={{ flexDirection: "row", height: "100%", width: "auto", justifyContent: "center", alignItems: "center" }} >
+        <ActivityIndicator />
+        <Text style={{ margin: 5 }}>Loading ...</Text>
+
+    </View>
+
     return mapRegion && (
         <View style={styles.container}>
             <MapView
